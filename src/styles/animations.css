@@ -1,0 +1,326 @@
+/* Custom Animations for Brainmine AI */
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Animation Classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slideInLeft {
+    animation: slideInLeft 0.6s ease-out;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 0.6s ease-out 0.2s both;
+  }
+  
+  .animate-slideIn {
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-bounceIn {
+    animation: bounceIn 0.8s ease-out;
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-size: 800px 104px;
+    animation: shimmer 1.5s infinite linear;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Loading Animation */
+  .loading-spinner {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Gradient Text Effect */
+  .gradient-text {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Button Effects */
+  .btn-primary {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #059669, #0891b2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  /* Input Focus Effects */
+  .input-focus {
+    transition: all 0.3s ease;
+  }
+  
+  .input-focus:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+  
+  /* Card Hover Effects */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Logo Animation */
+  .logo-glow {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    animation: logo-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes logo-pulse {
+    from {
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+    }
+  }
+  
+  /* Form validation animations */
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  /* Success animation */
+  .success-bounce {
+    animation: success-bounce 0.6s ease-out;
+  }
+  
+  @keyframes success-bounce {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Animations */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn,
+    .animate-slideInLeft,
+    .animate-slideInRight,
+    .animate-slideIn,
+    .animate-pulse,
+    .animate-bounceIn,
+    .animate-shimmer,
+    .animate-float {
+      animation: none;
+    }
+    
+    .hover-lift:hover,
+    .btn-primary:hover,
+    .card-hover:hover,
+    .hover-scale:hover {
+      transform: none;
+    }
+  }
+  
+  /* Utility Classes */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-fast {
+    transition: all 0.15s ease-out;
+  }
+  
+  .transition-slow {
+    transition: all 0.5s ease-out;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  
+  .shadow-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  }
+  
+  .shadow-glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .shadow-glow-purple {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Stagger animation for multiple elements */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }

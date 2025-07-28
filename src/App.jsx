@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
-import Login from './components/Login.jsx';
+import LoginPage from './components/LoginPage.jsx';
 import Dashboard from './components/Dashboard.jsx';
-import './index.css' // <-- This line is the most important part!
+import SocialMediaForm from './components/SocialMediaForm.jsx';
+import DomainForm from './components/DomainForm.jsx';
+import './styles/animations.css';
 
+const App = () => {
+  const [currentView, setCurrentView] = useState('login');
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true);
+  const renderCurrentView = () => {
+    switch (currentView) {
+      case 'login':
+        return <LoginPage onLogin={() => setCurrentView('dashboard')} />;
+      case 'dashboard':
+        return (
+          <Dashboard
+            onSelectSocial={() => setCurrentView('social')}
+            onSelectDomain={() => setCurrentView('domain')}
+          />
+        );
+      case 'social':
+        return <SocialMediaForm onBack={() => setCurrentView('dashboard')} />;
+      case 'domain':
+        return <DomainForm onBack={() => setCurrentView('dashboard')} />;
+      default:
+        return <LoginPage onLogin={() => setCurrentView('dashboard')} />;
+    }
   };
 
   return (
-    <div className="bg-gray-100 font-[Poppins] flex justify-center items-center min-h-screen p-4">
-      {isLoggedIn ? (
-        <Dashboard />
-      ) : (
-        <Login onLoginSuccess={handleLoginSuccess} />
-      )}
+    <div className="font-sans">
+      {renderCurrentView()}
     </div>
   );
-}
+};
 
 export default App;
