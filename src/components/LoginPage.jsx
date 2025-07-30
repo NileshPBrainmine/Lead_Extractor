@@ -26,7 +26,7 @@ const LoginPage = ({ onLogin }) => {
 
   // Hardcoded credentials
   const VALID_EMAIL = 'sales@brainmine.ai';
-  const VALID_PASSWORD = '1234';
+  const VALID_PASSWORD = 'Sales@4321#';
 
   const handleLogin = async () => {
     setIsLoading(true);
@@ -36,7 +36,7 @@ const LoginPage = ({ onLogin }) => {
       if (loginData.email === VALID_EMAIL && loginData.password === VALID_PASSWORD) {
         onLogin();
       } else {
-        alert('Invalid credentials. Please use sales@brainmine.ai and 1234');
+        alert('Invalid credentials. Please use Valid Email address and Password');
       }
       setIsLoading(false);
     }, 800);
@@ -56,8 +56,8 @@ const LoginPage = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center animate-fadeIn">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md flex flex-col items-center justify-center transform transition-all duration-500 hover:shadow-2xl">
+    <div className="min-h-screen w-screen flex items-center justify-center animate-fadeIn" style={{ backgroundImage: 'url(/03.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-full max-w-md flex flex-col items-center justify-center transform transition-all duration-500 hover:shadow-2xl translate-x-20 md:translate-x-48">
         <Logo size="large" />
         
         <h1 className="text-2xl font-bold text-gray-800 text-center mb-2">Brainmine.AI</h1>
@@ -65,15 +65,15 @@ const LoginPage = ({ onLogin }) => {
         
         <div className="space-y-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-700">Email Address</label>
+            <label className="text-sm font-medium text-gray-500">Email Address</label>
             <input
               type="email"
               name="email"
               value={loginData.email}
               onChange={handleInputChange}
               onKeyPress={handleKeyPress}
-              placeholder="sales@brainmine.ai"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 hover:border-gray-400 text-black"
+              placeholder="abc@gmail.com"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 hover:border-gray-400 text-black bg-white placeholder-gray-400"
               required
               disabled={isLoading}
             />
@@ -88,7 +88,7 @@ const LoginPage = ({ onLogin }) => {
                 value={loginData.password}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
-                placeholder="Sales@4321#"
+              placeholder="********"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 hover:border-gray-400 pr-12 text-black"
                 required
                 disabled={isLoading}

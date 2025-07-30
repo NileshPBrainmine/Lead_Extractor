@@ -14,7 +14,7 @@ const App = () => {
         return <LoginPage onLogin={() => setCurrentView('dashboard')} />;
       case 'dashboard':
         return (
-          <Dashboard
+          <Dashboard className="w-full"
             onSelectSocial={() => setCurrentView('social')}
             onSelectDomain={() => setCurrentView('domain')}
           />
