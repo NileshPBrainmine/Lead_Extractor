@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from './logo.jsx';
+import Logo from './Logo.jsx';
 
 // Simple Eye icons as SVG components
 const EyeIcon = () => (
